@@ -5,20 +5,11 @@ output: html_document
 
 ### Introduction
 
-An introduction of the data and a description of the trends/books/items you are choosing to analyze (and why!)
+In this analysis, I use the data that records items checked out at least 10 times a month from 2017-2022 from the Seattle Public Library. I want to see the trend of total checkout numbers for digital items and physical items over the years, the average checkout number for the top 3 popular material types over time in 2022, and how each checkout type contributes to each year's total checkout number. By looking at these patterns, we can have a better idea of how users reading preference change over time in the Seattle Public Library, and if there is any unusual pattern that can allow us to further investigation of its potential cause.
 
 ### Summary Information
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
-
-These will likely be calculated using your DPLYR skills, answering questions such as:
-
-- What is the average number of checkouts for each item?
-- What is the month or year with the most/least checkouts for a book that you're interested in?
-- What is the month or year with the most/least checkouts for ebooks?
-- How has the number of print book checkouts changed over time?
-
-Feel free to calculate and report values that you find relevant.
+I calculated 5 values in my analysis. The first one is the total number of checkouts per year for digital items and physical items. This number is used to generate a line plot that shows the trend of the total number of checkouts for the two items over the year. The second and the third ones are the top 3 material types that have the highest number of checkouts in 2022 and their mean checkout numbers in each month of the year. These two values are used to generate the line plot that shows how the checkout number for the top 3 popular material types in 2022 change over time. The fourth one is the total number of checkouts of each checkout vendor tool each year. This is used to generate a bar plot that shows how each tool types contribute to each year's total checkout numbers. The final one is looking at the mean number of checkouts for e-books each year. Since from the second value, we know that e-books are the most popular material type in 2022, I want to see how the number of e-books changes overtime.
 
 ### The Dataset
 
@@ -43,10 +34,13 @@ for others to analyze the pattern and trend of item popularity.
 
 ### First Trends Over Time Chart
 
-Chart: Line Plot
-Question: What is the trend in total checkouts for digital and physical items over the years?
-Description: 
-This line plot shows the trend of the total checkouts for digital and phtsical items between 2017 to 2022.
+- Chart: 
+  - Line Plot
+- Question: 
+  - What is the trend in total checkouts for digital and physical items over the years?
+- Description: 
+  - This line plot shows the trend of the total checkouts for digital and physical items between 2017 and 2022. Before the mid-year of 2019, the number of checkouts for physical items is much greater than that for digital items even though the checkout number was decreasing for physical items and increasing for digital items over time. Starting from the beginning of 2019 to 2020, the checkout number for physical items dropped so significantly that it became much less than for digital items. After 2020, the checkout number for both item types increases, and the checkout number for Physical items overall increases more than that for digital items. In short, the overall trend of digital item checkouts is increasing, and the overall trend of physical item checkouts is decreasing. 
+This chart is included to find the changes in people's reading habits over time. And by looking at its pattern, we can further investigate what happened in a specific timeframe that causes some unusual changes in the chart, like the sharp drop between 2019 to 2020 for physical items. 
 
 ``````{r, echo = FALSE, warning = FALSE, code = readLines("chart1.R")}
 
@@ -54,9 +48,13 @@ This line plot shows the trend of the total checkouts for digital and phtsical i
 
 ### Second Trends Over Time Chart
 
-Chart: Line Plot
-Question: How has the number of average checkouts for the top 3 material types changed over time in 2022?
-Description: 
+- Chart: 
+  - Line Plot
+- Question: 
+  - How has the number of average checkouts for the top 3 material types changed over time in 2022?
+- Description: 
+  - This line plot shows three trends for the average checkout number of the top 3 material types in 2022 The top 3 material types that have the highest checkout number in 2019 are audiobooks, books, and e-books. According to the chart, the overall trend for these 3 lines is increasing. The average checkout numbers for audiobooks and e-books are much higher than that for books. There are 2 steep drops in audiobooks between January to February and August to September and 1 significant increase between November to December. As for e-books, the trend is relatively steady before June, but it greatly increases 2 times between June to July and August to September, and each increase follows a great decrease. For books, it decreases greatly between February to March and August to September, but it increases greatly after September. The checkout number for three material types all increases massively between June to July and after November. This might due to the summer and winter holidays for students who can then have more time to read.
+This chart is included to see the pattern of people's preference for the material types in 2022. Since it is the more recent and complete data, we can see the most popular material types for people who use The Seattle Public Library. The library can also manage its collection of different types of material so that it can best benefit its users.
 
 ``````{r, echo = FALSE, warning = FALSE, code = readLines("chart2.R")}
 
@@ -64,12 +62,14 @@ Description:
 
 ### Your Choice
 
-Chart: Bar Plot
-Question: On average, which year has the highest checkout numbers? How has the main checkout type changed?
-Description: 
+- Chart: 
+  - Bar Plot
+- Question: 
+  - On average, which year has the highest checkout numbers? How has the main checkout type changed?
+- Description: 
+  - This bar chart shows the total checkout numbers per year and how each checkout type contributes to these numbers. There are 5 types of checkout vendor tools, and we can see the most dominant types are Horizon and OverDrive. Between 2017 to 2019, the number of checkouts by Horizon greatly outweighs other types, which are more than 50%. And the total checkout number over the years increases slightly as well. The total number peeks in 2019 but dropped greatly in 2020, which reaches the lowest number in all years. Between 2020 to 2022, the checkout number by OverDrive greatly outweighs Horizon, which is more than 50%. And we can barely see other types in these years. The total checkout number per year increases as well. But the overall number between 2020 to 2022 is less than that between 2017 to 2019.
+This chart is included to see how people's main checkout tools and total checkout numbers change over time. Since Horizon is used for physical items checkout and OverDrive for digital items, we can then make a conclusion that the main checkout item type is physical between 2017 to 2019 is physical and digital between 2020 to 2022.
 
 ``````{r, echo = FALSE, warning = FALSE, code = readLines("chart3.R")}
 
 ```
-
-

@@ -19,6 +19,6 @@ top_3 <- checkouts %>%
 
 ggplot(top_3) +
   geom_line(aes(x = CheckoutMonth, y = checkout_mean, color = MaterialType)) +
-  labs(title = "Average Checkout for Top Three Material Type Over Time in 2022",
+  labs(title = "Average Checkout for Top Three Material Types Over Time in 2022",
        x = "Month", y = "Number of Checkouts") +
   scale_x_continuous(breaks = seq(1, 12, by = 1))

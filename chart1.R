@@ -1,5 +1,6 @@
 library(tidyverse)
 library(ggplot2)
+library(dplyr)
 
 checkouts <- read.csv("/Users/lawclrr/Desktop/2017-2023-10-Checkouts-SPL-Data.csv") 
 
